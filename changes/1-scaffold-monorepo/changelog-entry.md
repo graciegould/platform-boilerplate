@@ -9,7 +9,7 @@
 
 ### 🌟 High-Level Summary
 
-This Scaffold Monorepo establishes the foundational PNPM-based monorepo structure. It includes seven workspace packages with a clearly defined dependency hierarchy, enabling shared logic and types across applications and services. This sets the stage for scalable development and future integration with CI/CD and task runners.
+This initial release establishes the foundational PNPM-based monorepo structure. It includes seven workspace packages, a root `README.md`, a shared `tsconfig.json`, and a clearly defined dependency hierarchy, enabling shared logic across applications and services. This sets the stage for scalable development and future integration with CI/CD and task runners.
 
 ---
 
@@ -20,6 +20,9 @@ This Scaffold Monorepo establishes the foundational PNPM-based monorepo structur
   - `pnpm-workspace.yaml` to define the monorepo structure.
   - Root `package.json` with `typescript` and `ts-node` for development.
   - Run scripts (`app`, `exec`, `server`, etc.) for easy package execution.
+  - A `test` script that serves as a smoke test for all packages.
+  - `README.md` with project overview and setup instructions.
+  - `tsconfig.json` to standardize TypeScript settings.
 
 #### `platform-core`
 - **Added**

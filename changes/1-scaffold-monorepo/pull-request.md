@@ -4,7 +4,7 @@
 |---------------|-------------------------------------|
 | **Issue №**   | `1`                                 |
 | **Issue Title** | `Scaffold Monorepo with Workspace-Linked Dependencies` |
-| **Issue Link**  | `[Link to ./issue.md]`              |
+| **Issue Link**  | `https://github.com/graciegould/platform-boilerplate/issues/1` |
 
 ---
 
@@ -18,11 +18,17 @@
 
 ## 🚀 Summary for AI & Human Reviewers
 
-This pull request establishes the foundational monorepo structure for the entire platform. It creates seven distinct packages under PNPM workspaces, defines the dependency graph between them (`app` -> `ui` -> `core`), and installs the necessary tooling (`typescript`, `ts-node`) to validate the setup. The result is a clean, linkable, and scalable monorepo, ready for feature development.
+This pull request establishes the foundational monorepo structure for the entire platform. It creates seven distinct packages under PNPM workspaces, defines the dependency graph, and installs the necessary tooling.
+
+**Update**: This PR also addresses initial review feedback by adding a root `README.md`, a `tsconfig.json` for consistent TypeScript settings, and an automated smoke test script.
 
 ---
 
 ## 🧱 Architectural Impact
+
+**New Root Files:**
+- `README.md`
+- `tsconfig.json`
 
 **Modified Packages:**
 - `[x] platform-core`
@@ -34,6 +40,10 @@ This pull request establishes the foundational monorepo structure for the entire
 - `[x] platform-db`
 
 **Dependency Changes (per package):**
+*   **`(root) package.json`**:
+    *   Added: `test` script for smoke testing.
+    *   Added: `ts-node@10.9.2` (dev)
+    *   Added: `typescript@5.4.5` (dev)
 *   **`platform-ui`**:
     *   Added: `platform-core@workspace:*`
 *   **`platform-app`**:
@@ -42,9 +52,6 @@ This pull request establishes the foundational monorepo structure for the entire
     *   Added: `platform-ui@workspace:*`
 *   **`platform-server`**:
     *   Added: `platform-core@workspace:*`
-*   **`(root) package.json`**:
-    *   Added: `ts-node@10.9.2`
-    *   Added: `typescript@5.4.5`
 
 ---
 
@@ -62,16 +69,13 @@ This pull request establishes the foundational monorepo structure for the entire
 ## 🧪 Automated & Manual Test Plan
 
 **Automated Tests:**
-*   **Command**: `N/A`
-*   **Expected Outcome**: No automated tests were added in this foundational PR.
+*   **Command**: `pnpm test`
+*   **Expected Outcome**: The script should execute the entry points for all primary packages sequentially without any errors, confirming that cross-package imports resolve correctly.
 
 **Manual Validation Steps:**
 1.  **Setup**: Run `pnpm install` in the root directory.
-2.  **Observation**: The installation should complete successfully with no workspace linking errors.
-3.  **Action**: Run `pnpm run app`.
-4.  **Observation**: The console should log messages from `platform-app`, `platform-ui`, and `platform-core`, demonstrating the import chain is working correctly.
-5.  **Action**: Run `pnpm run server`.
-6.  **Observation**: The console should log messages from `platform-server` and `platform-core`.
+2.  **Action**: Run `pnpm run app` or any other package-specific script.
+3.  **Observation**: The console should log messages from the package and its dependencies.
 
 ---
 
@@ -85,4 +89,4 @@ N/A
 
 - This PR establishes the core architecture. All subsequent feature work will build upon this foundation.
 - PNPM's `workspace:*` protocol is used to ensure dependencies always point to the local workspace packages.
-- Follow-up work will involve integrating a task runner like Turborepo and setting up build/test pipelines.
+- The new `tsconfig.json` provides a baseline for all TypeScript projects in the monorepo.
