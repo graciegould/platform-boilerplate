@@ -1,0 +1,15 @@
+{
+  "name": "platform-boilerplate",
+  "private": true,
+  "scripts": {
+    "app": "pnpm --filter platform-app exec ts-node src/index.ts",
+    "exec": "pnpm --filter platform-exec exec ts-node src/index.ts",
+    "server": "pnpm --filter platform-server exec ts-node src/index.ts",
+    "ui": "pnpm --filter platform-ui exec ts-node src/index.ts",
+    "core": "pnpm --filter platform-core exec ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5"
+  }
+} 

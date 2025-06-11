@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+  - 'platform-server'
+  - 'platform-dev'
+  - 'platform-db' 
