@@ -2,7 +2,7 @@
 
 | Metadata      | Value                               |
 |---------------|-------------------------------------|
-| **Pull Request** | `[Link to PR #1]`                   |
+| **Pull Request** | `https://github.com/graciegould/platform-boilerplate/pull/3` |
 | **Issue**        | `https://github.com/graciegould/platform-boilerplate/issues/1`                |
 
 ---

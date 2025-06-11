@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "platform-core": ["packages/platform-core/src"],
+      "platform-ui": ["packages/platform-ui/src"],
+      "platform-app": ["apps/platform-app/src"],
+      "platform-exec": ["apps/platform-exec/src"],
+      "platform-server": ["platform-server/src"],
+      "platform-dev": ["platform-dev/src"],
+      "platform-db": ["platform-db/src"]
+    }
+  },
+  "exclude": ["node_modules"]
+} 
