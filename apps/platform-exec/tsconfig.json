@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "paths": {
+      "platform-ui": ["../../packages/platform-ui"],
+      "platform-ui/*": ["../../packages/platform-ui/src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
