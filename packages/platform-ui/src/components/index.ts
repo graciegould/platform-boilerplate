@@ -1,1 +1,1 @@
-export * from './HelloShared'; 
+export { HelloShared } from './HelloShared';
