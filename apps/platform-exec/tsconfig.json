@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
-      "platform-ui": ["../../packages/platform-ui"],
-      "platform-ui/*": ["../../packages/platform-ui/src/*"]
+      "@platform/ui": ["../../packages/platform-ui"],
+      "@platform/ui/*": ["../../packages/platform-ui/src/*"]
     }
   },
   "include": ["src"],
