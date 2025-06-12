@@ -1,2 +1,8 @@
+import * as components from './components/';
 
-export * from './components/HelloShared';
+const Ui = {
+  components,
+};
+
+export default Ui;
+

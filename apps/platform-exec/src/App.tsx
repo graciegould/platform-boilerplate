@@ -1,9 +1,10 @@
-import React from 'react';
+import Ui from '@platform/ui';
 
-const App = () => {
+const App: React.FC = (): JSX.Element => {
   return (
     <>
       <h1>Platform Exec</h1>
+      <Ui.components.HelloShared />
     </>
   );
 };
