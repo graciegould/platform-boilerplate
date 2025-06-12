@@ -7,10 +7,14 @@
     "exec": "pnpm --filter platform-exec exec ts-node src/index.ts",
     "server": "pnpm --filter platform-server exec ts-node src/index.ts",
     "ui": "pnpm --filter platform-ui exec ts-node src/index.ts",
-    "core": "pnpm --filter platform-core exec ts-node src/index.ts"
+    "core": "pnpm --filter platform-core exec ts-node src/index.ts",
+    "dev": "pnpm --filter platform-server run dev"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
     "ts-node": "10.9.2",
-    "typescript": "5.4.5"
+    "typescript": "^5.8.3",
+    "vite": "^5.3.1",
+    "vite-tsconfig-paths": "^4.3.2"
   }
 } 

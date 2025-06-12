@@ -1,5 +1,11 @@
-import { coreLogic } from "platform-core";
+// Re-export all components for direct imports
+export * from './components';
 
-console.log("[platform-ui] ready");
+// Create a namespaced object for object-style imports
+import * as components from './components';
 
-export const uiComponent = () => `Hello from platform-ui, which uses: [${coreLogic()}]`; 
+const Ui = {
+    components,
+};
+
+export default Ui;

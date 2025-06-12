@@ -1,0 +1,1 @@
+export { HelloShared } from './HelloShared';
