@@ -1,4 +1,4 @@
-import { HelloShared } from '@platform/ui/components'; // See how this is imported in exec for alternatives
+import { HelloShared } from '@platform/ui/components'; 
 
 const App = () => {
   return (
