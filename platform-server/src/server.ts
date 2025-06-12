@@ -2,11 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { createServer as createViteServer } from "vite";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const APP_PORT = process.env.APP_PORT ? Number(process.env.APP_PORT) : 3000;
 const EXEC_PORT = process.env.EXEC_PORT ? Number(process.env.EXEC_PORT) : 3001;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 (async () => {
   // platform-app
