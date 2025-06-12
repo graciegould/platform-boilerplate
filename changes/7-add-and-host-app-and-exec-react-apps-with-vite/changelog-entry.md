@@ -9,7 +9,7 @@
 
 ### 🌟 High-Level Summary
 
-> This release establishes the foundational frontend architecture for the platform. It introduces two distinct Vite-powered React applications (`platform-app` and `platform-exec`), two shared library packages (`@platform/core` and `@platform/ui`), and a unified development server (`platform-server`). The entire workspace now uses `pnpm` for efficient dependency management and supports scoped path aliases for clean, maintainable imports between packages.
+> This release establishes the foundational frontend architecture for the platform. It introduces two distinct Vite-powered React applications (`platform-app` and `platform-exec`), two shared library packages (`@platform/core` and `@platform/ui`), and a unified development server (`platform-server`). The server was upgraded to TypeScript 5.8 and converted to a native ES Module to resolve a series of startup errors. The entire workspace now uses `pnpm` for efficient dependency management and supports scoped path aliases for clean, maintainable imports between packages.
 
 ---
 
@@ -33,6 +33,10 @@
 - **Changed**
   - Refactored server to run two separate Vite/Express development servers.
   - The server now hosts `platform-app` on `localhost:3000` and `platform-exec` on `exec.localhost:3001`.
+- **Fixed**
+  - Converted the server to a native ES Module (`"type": "module"`) to resolve `SyntaxError: Cannot use import statement outside a module`.
+  - Updated the `dev` script to use `node --loader ts-node/esm` to correctly handle `.ts` files in an ESM context.
+  - Resolved `ReferenceError: __dirname is not defined` by replacing it with an `import.meta.url`-based equivalent.
 - **Removed**
   - Removed the `vhost` dependency in favor of the multi-server setup.
 
@@ -42,6 +46,7 @@
   - Configured `pnpm-workspace.yaml` to define the monorepo structure.
   - Added path aliases to `tsconfig.base.json` for `@platform/*` packages.
 - **Fixed**
+  - Upgraded `typescript` to `v5.8.3` to resolve `Unknown compiler option 'erasableSyntaxOnly'` error.
   - Resolved `EUNSUPPORTEDPROTOCOL` error by switching to `pnpm`.
 
 ---
