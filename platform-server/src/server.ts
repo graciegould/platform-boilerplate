@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { createServer as createViteServer } from "vite";
@@ -32,7 +32,7 @@ const __dirname = path.dirname(__filename);
   });
 
   // Middleware to ensure we only serve on exec.localhost
-  execServer.use((req, res, next) => {
+  execServer.use((req: Request, res: Response, next: NextFunction) => {
     if (req.hostname !== 'exec.localhost') {
       res.status(404).send('Not Found');
       return;
