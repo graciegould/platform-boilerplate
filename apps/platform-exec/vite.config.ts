@@ -1,15 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      'platform-ui': path.resolve(__dirname, '../../packages/platform-ui/src/index.ts'),
-      '@platform-ui': path.resolve(__dirname, '../../packages/platform-ui/src'),
-    },
-  },
+  plugins: [react(), tsconfigPaths()],
   server: {
     port: 3001,
   },

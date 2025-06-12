@@ -10,14 +10,12 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "vhost": "^3.0.2"
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.3",
     "@types/express": "^4.17.23",
     "@types/node": "^20.19.0",
-    "@types/vhost": "^3.0.10",
     "@vitejs/plugin-react": "^4.0.0",
     "nodemon": "^3.0.0",
     "ts-node": "^10.9.2",

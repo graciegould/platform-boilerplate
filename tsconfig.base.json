@@ -7,6 +7,13 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@platform/core": ["packages/platform-core/src/index.ts"],
+      "@platform/core/*": ["packages/platform-core/src/*"],
+      "@platform/ui": ["packages/platform-ui/src/index.ts"],
+      "@platform/ui/*": ["packages/platform-ui/src/*"]
+    }
   }
 }
